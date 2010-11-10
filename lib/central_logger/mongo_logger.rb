@@ -77,7 +77,7 @@ module CentralLogger
         user_config = YAML::load(ERB.new(IO.read(File.join(Rails.root, 'config/database.yml'))).result)[Rails.env]['mongo'] || {}
         @application_name = Rails.root.basename.to_s
 
-        @mongo_collection_name = "#{Rails.env}_log"
+        @mongo_collection_name = "log_messages"
 
         @db_configuration = {
           'host' => 'localhost',
